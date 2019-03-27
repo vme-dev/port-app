@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.content {
+ 
+}
+.left-block {
+  float: right;
+  width: 75%;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+.card-block {
+  float: right;
+  width: 75%;
+  overflow: hidden;
+}
+.card {
+  display: block;
+  width: 33.33333333333333%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  background: #aaa;
+  background-image: url(girl3.jpg);
+  background-size: cover;
+  border: 1px #282c34 solid;
+}
+.card-block_wrap {
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content:flex-start;
+  margin: 0px;
+  padding: 0px;
+
+
+}
+.card-wrap_inner {
+  padding: 33.33% 0%;
+}
+.card-img {
+  width: 100%;
+  height: auto;
+}
+/* .card-wrap {
+  position:relative;
+ width:100%;
+ padding-bottom:71%;
+}
+.card-wrap_inner {
+  position:absolute;
+ width:100%;
+ height:100%;
+} */
+

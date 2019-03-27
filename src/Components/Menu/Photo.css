@@ -1,0 +1,18 @@
+.my-photo {
+    margin-bottom: 20px;
+}
+.my-photo_wrap {
+    width: 190px;
+    height: 190px;
+    margin: 0px auto;
+    border-radius: 50% 50%;
+    overflow: hidden;
+    border: 5px solid #D4D4D5;
+    position: relative;
+}
+.my-photo-img {
+    width: 100%;
+	top: -8px;
+	left: 0px;
+	position: absolute;
+}

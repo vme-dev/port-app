@@ -1,0 +1,33 @@
+.menu {
+    width: 25%;
+    display: block;
+    padding: 0px 0px 0px 30px;
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    background: #fff;
+    text-align: left;
+    overflow: hidden;
+  }
+  .menu-head {
+    margin-bottom: 20px;
+  }
+  .menu-my_name {
+    margin-bottom: 20px;
+  }
+  .linked-item-img {
+    width: 50px;
+    height: auto;
+  }
+  .admin-login_btn {
+  
+    padding: 5px 10px;
+    margin: 10px 30px 10px 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgb(155, 168, 240);
+    color: aliceblue;
+  }
