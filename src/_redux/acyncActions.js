@@ -29,22 +29,25 @@ export function fetchApi(url,options,effect) {
 export function Auth(url,options,effect) {
 
     return (dispatch) => {
-        dispatch(action.WORK_itemsIsLoading(true));
+        dispatch(action.LOGIN_itemsIsLoading(true));
 
         fetch(url,options)
             .then((response) => {
-                console.log(response);
+                
                 if (!response.ok) {
-                    throw Error(response.statusText);
-                }
-                dispatch(action.WORK_itemsIsLoading(false));
 
-                console.log(response);
+                    throw Error("error");
+                } else {
+                    
+                dispatch(action.LOGIN_itemsIsLoading(false));
+                
                 return response;
+                }
             })
             .then((obj) => dispatch(effect(obj)))
-            .catch(() => { 
-                dispatch(action.WORK_itemsIsLoading(false));
-                dispatch(action.WORK_itemsHasErrored(true))});
+            .catch((err,res) => { 
+                console.log(err);
+                dispatch(action.LOGIN_itemsIsLoading(false));
+                dispatch(action.LOGIN_itemsHasErrored(true))});
     };
 }

@@ -49,17 +49,11 @@ class Work extends Component {
     if ( this.props.isLoading )  {
         return <p>Loading…</p>;
     }
-    
-
-    console.log(this.props.work);
 
 		return (
 		<div className="work">
             <h2 className="work-head">My work</h2>
-            <div className="back-btn">
-              <Link to="/">{"< Back"}</Link>
-            </div>
-
+            
             <div className="work-block">
                 <ul className="work-list">
 

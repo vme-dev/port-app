@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link ,match, Redirect} from "re
 import * as action from "../../_redux/actions.js";
 import * as acyncActions from "../../_redux/acyncActions.js";
 import Work from '../Work';
+import AdminMail from '../AdminMail';
 
 class PrivateRoute extends Component {
     
@@ -28,7 +29,7 @@ class PrivateRoute extends Component {
     return (
         <Route  render={props =>
                                   this.props.auth ? (
-                                    <Work />
+                                    <AdminMail />
                                   ) : (
                                     <Redirect
                                       to={{

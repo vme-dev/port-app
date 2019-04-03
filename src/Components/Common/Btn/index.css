@@ -1,0 +1,10 @@
+.btn-home {
+    padding: 10px 20px;
+    background: #2EA2CC;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 18px;
+}
+.btn-home a {
+    color: #fff;
+}

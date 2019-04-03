@@ -7,6 +7,8 @@ import * as action from "../../_redux/actions.js";
 import * as acyncActions from "../../_redux/acyncActions.js";
 import './Login.css';
 
+import Modal from '../Modal';
+
 class Login extends Component {
     
   constructor(props) {
@@ -14,12 +16,14 @@ class Login extends Component {
 
     this.state = {
         login: '',
-        pass:''
+        password:'',
+        a:true
     };
       
       this.onCancel = this.onCancel.bind(this);
       this.onChange = this.onChange.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
+      this.onError = this.onError.bind(this);
     }
 
     onChange(event) {
@@ -37,6 +41,9 @@ class Login extends Component {
             password:''
           });
     }
+    onError() {
+      this.props.errorAction(false);
+    }
     onSubmit() {
       let data = {
         login:this.state.login,
@@ -48,7 +55,7 @@ class Login extends Component {
           return
         }
       }
-        this.props.sendMail('/login',{
+        this.props.authAction('/login',{
             method:'post',
             body: JSON.stringify(data),
             headers: {
@@ -60,9 +67,9 @@ class Login extends Component {
 
 	render () {
 
-    if (this.props.hasErrored) {
-      return <p>Sorry! There was an error loading the items</p>;
-    }
+    // if (this.props.hasErrored) {
+    //   return <p>Sorry! There was an error loading the items</p>;
+    // }
 
     if ( this.props.isLoading )  {
         return <p>Loading…</p>;
@@ -71,8 +78,12 @@ class Login extends Component {
     if (this.props.auth) return <Redirect to="/admin" />;
 
 		return (
-		<div className="login">
+    <React.Fragment>
+     {this.props.hasErrored ? <Modal onError={this.onError} errorText={"wwww"} /> : null}
+  
 
+		<div className="login">
+      
             <div className="back-btn">
               <Link to="/">{"< Back"}</Link>
             </div>
@@ -87,7 +98,7 @@ class Login extends Component {
                             <input  type="text" 
                                     name="login" placeholder="Login" 
                                     onChange={ (e) => this.onChange(e)} 
-                                    value={this.state.name}
+                                    value={this.state.login}
                                     className="form-input"/>
                         </div>
 
@@ -96,7 +107,7 @@ class Login extends Component {
                             <input  type="password" 
                                     name="password" placeholder="Password" 
                                     onChange={ (e) => this.onChange(e)} 
-                                    value={this.state.email}
+                                    value={this.state.password}
                                     className="form-input"/>
                         </div>
 
@@ -111,17 +122,19 @@ class Login extends Component {
             </div>
             
         </div>
+        </React.Fragment>
 		)}
 }
 
 export default connect(
   (store) => {return {
     auth: store.appState.auth,
-    hasErrored: store.itemsHasErrored,
-    isLoading: store.itemsIsLoading
+    hasErrored: store.appState.loginHasErrored,
+    isLoading: store.appState.LoginIsLoading
   }},
   (dispatch) => {return {
-    sendMail: (url,options,effect)     => { dispatch(acyncActions.Auth(url,options,effect)); },
+    authAction: (url,options,effect)     => { dispatch(acyncActions.Auth(url,options,effect)); },
+    errorAction: (bool)     => { dispatch(action.LOGIN_itemsHasErrored(bool)); },
   }}
   
   )(Login);

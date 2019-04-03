@@ -1,0 +1,35 @@
+.modal-wrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.5);
+}
+.modal {
+    width: 300px;
+
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    transform: translateY(-50%);
+}
+.modal-head {
+    display: block;
+    background: rgb(238, 105, 105);
+    padding: 10px 20px;
+    color: #fff;
+}
+.modal-text {
+    min-height: 100px;
+    padding: 10px 20px;
+}
+.modal-btn {
+    color: #fff;
+    text-align: center;
+    margin: 5px auto;
+    width: 30%;
+    background: rgb(49, 142, 204);
+    padding: 5px 20px;
+}

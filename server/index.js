@@ -13,6 +13,8 @@ var bodyParser = require('body-parser');
 var Router = require('./router/index.js');
 var keys = require('./keys');
 
+var Mail = require('./models/Mail.js')
+
 
 app.use('/', express.static(__dirname + '/public'));
 
@@ -63,7 +65,10 @@ app.post('/login', (req, res, next) => {
     }
     console.log(req.params);
     if (!user) {
-      return res.send('Укажите правильный email или пароль!');
+      return res.status(400).send({
+        error:'GENERIC',
+        description:'Wrong auth'
+      });
     }
     req.logIn(user, function(err) {
       if (err) {
@@ -88,6 +93,12 @@ app.get('/admin', auth, (req, res) => {
     "name":'req.body.name',
   };
    res.status(201).json(postData);
+
+});
+app.get('/get-mail', auth, (req, res) => {
+  Mail.find({}).then((posts) => {
+		res.status(200).json(posts);
+	})
 
 });
 

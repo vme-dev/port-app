@@ -34,6 +34,17 @@ class About extends Component {
         console.log(this.state.firsLoad);
 
         if (this.state.firsLoad) {
+            let elmBot = document.getElementById('skils-anim').getBoundingClientRect().bottom;
+            let winH = document.documentElement.clientHeight;
+
+            if (elmBot < winH + 10) {
+                setTimeout(function() {
+                    const elem = document.getElementById("skils-anim");
+                elem.classList.add("anim"); 
+                },100);
+
+            }
+
             window.addEventListener('scroll',this.handlerAnim);
 
             this.setState({firsLoad: false});

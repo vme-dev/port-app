@@ -11,6 +11,7 @@
     text-align: left;
     margin-left: 30px;
     font-family: Verdana,Tahoma, sans-serif;
+    margin-bottom: 20px;
 }
 .personal-info-head {
     display: inline-block;
@@ -84,7 +85,7 @@ margin-bottom: 10px;
     width: 0%;
     height: 7px;
     background: #2EA2CC;
-    transition: width 1s linear 0.3s;
+    transition: width 0.5s linear 0.3s;
 
 }
 .about-text {
@@ -92,7 +93,7 @@ margin-bottom: 10px;
     margin: 0px auto 50px;
 }
 .about-text-head {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     font-size: 16px;
@@ -102,4 +103,48 @@ margin-bottom: 10px;
 }
 #skils-anim.anim .skil-progres-value {
     width: 60%;   
+}
+
+
+@media screen and (max-width: 1170px) {
+	
+}
+
+/* Landscape tablets and medium desktops */
+@media screen and (max-width: 991px) {
+    .left-block {
+        float: none;
+        width: 100%;
+        overflow: hidden;
+        background: #f6f6f6;
+      }
+  
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (max-width: 768px)  {
+  .about-text {
+        width: 100%;
+        margin: 0px auto 50px;
+    }
+    .about {
+        margin: 5px 20px;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 576px) {
+    .about {
+        margin: 3px 5px;
+    }
+}
+
+/* Portrait phones and smaller */
+@media screen and (max-width: 480px) {
+  
+}
+
+/* Iphone 5 */
+@media screen and (max-width: 320px) {
+    
 }

@@ -58,6 +58,11 @@ router.get('/get-work', (req,res) => {
 		res.status(200).json(posts);
 	})	
 });
+router.get('/get-mail', (req,res) => {
+	Mail.find({}).then((posts) => {
+		res.status(200).json(posts);
+	})	
+});
 
 router.post('/add', (req,res) => {
 	console.log(req.files);

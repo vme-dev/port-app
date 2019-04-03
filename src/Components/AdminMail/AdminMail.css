@@ -1,0 +1,56 @@
+.admin-mail-head {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+
+.mail-item {
+   
+}
+.mail-item-wrap {
+    border: 3px #eee solid;
+    border-radius: 20px;
+    padding: 20px 50px 20px 20px;
+    margin: 10px 10px;
+    display: inline-block; 
+    position: relative;
+    overflow: hidden;
+}
+.mail-item-wrap:hover .mail-del {
+    display: inline-block;
+    opacity: 1;
+}
+.mail-head {
+
+}
+.mail-name {
+
+}
+.mail-email {
+
+}
+.mail-text {
+    padding: 15px 0px;
+}
+.mail-time {
+
+}
+.mail-del {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 25px;
+    color: #eee;
+    background: rgb(230, 72, 72);
+    opacity: .0;
+    transition: opacity 1s linear 0.3s;
+}
+.mail-del-icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0px 29%;
+}

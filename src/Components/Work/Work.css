@@ -92,3 +92,39 @@
 .btn.toCode {
     float: right;
 }
+
+
+
+@media screen and (max-width: 1170px) {
+	
+}
+
+/* Landscape tablets and medium desktops */
+@media screen and (max-width: 991px) {
+    .work-item{
+        width: 50%;
+    }
+  
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (max-width: 768px)  {
+  
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 576px) {
+
+}
+
+/* Portrait phones and smaller */
+@media screen and (max-width: 480px) {
+    .work-item{
+        width: 100%;
+    }
+}
+
+/* Iphone 5 */
+@media screen and (max-width: 320px) {
+    
+}

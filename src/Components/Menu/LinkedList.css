@@ -1,3 +1,26 @@
+.linked-list-switch {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 50px;
+    color: #eee;
+    background: rgb(230, 72, 72);
+    opacity: 1;
+    transition: opacity 1s linear 0.3s;
+}
+.linked-list-switch.active {
+    background: rgb(49, 142, 204);
+}
+
+.linked-list-icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0px 29%;
+}
 .linked-list {
     margin: 0px 0px;
     padding: 0px 0px;

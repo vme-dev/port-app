@@ -17,10 +17,19 @@ const appState = (state = mainState(), action) => {
         case 'LOGIN_SEND':
         {  
             alert("auth_SUCCESS");
-            console.log(state);
+            console.log("_______",action.res.body);
             return {...state,auth:true};
             break;
         }
+        case 'LOGIN_ITEMS_IS_LOADING':{    
+            return {...state,  loginIsLoading: action.isLoading };
+            break;
+        }
+        case 'LOGIN_ITEMS_HAS_ERRORED':{    
+            return {...state, loginHasErrored: action.hasErrored };
+            break;
+        }
+
         case "RECEIVE_POSTS":
         {   
                 return Object.assign({}, state, { arr: action.posts, f:false
@@ -56,7 +65,6 @@ const itemsIsLoading = (state = false, action) => {
 }
 
 const work = (state = {itemsIsLoading:false,itemsIsLoadinghasErrored:false,items:[]}, action) => {
-    console.log(action);
     switch (action.type) {
         case 'WORK_DATA_SUCCESS':{    
             return {...state, items: [...action.items] };
@@ -75,13 +83,33 @@ const work = (state = {itemsIsLoading:false,itemsIsLoadinghasErrored:false,items
             return state;
     }
 }
+const admin = (state = {itemsIsLoading:false,itemsIsLoadinghasErrored:false,mail:[]}, action) => {
+    switch (action.type) {
+        case 'GET_MAIL_SUCCESS':{    
+            return {...state, mail: [...action.items] };
+            break;
+        }
+        case 'MAIL_IS_LOADING':{    
+            return {...state,  itemsIsLoading: action.isLoading };
+            break;
+        }
+        case 'MAIL_HAS_ERRORED':{    
+            return {...state, itemshasErrored: action.hasErrored };
+            break;
+        }
+
+        default:
+            return state;
+    }
+}
 
 const reduser = combineReducers({
     routing: routerReducer,
     appState,
     itemsHasErrored,
     itemsIsLoading,
-    work
+    work,
+    admin
 });
 
 export default reduser;
