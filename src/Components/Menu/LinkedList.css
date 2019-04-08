@@ -27,6 +27,7 @@
     text-align: left;
     margin: 50px 0px;
     color: #4a545d;
+    animation: move 1s 1 linear normal;
 }
 .linked-item {
     margin-bottom: 30px;
@@ -34,3 +35,22 @@
 .linked-item a {
     color: #4a545d;
 }
+.admin-login_btn {
+    display: inline-block;
+    padding: 6px 30px;
+    margin: 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgb(49, 142, 204);
+    color: #fff;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0.0;
+      }
+    90% {
+        opacity: 1.0;
+      }
+  }

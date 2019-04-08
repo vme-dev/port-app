@@ -130,6 +130,9 @@ margin-bottom: 10px;
     .about {
         margin: 5px 20px;
     }
+    .about-head {
+        margin-bottom: 20px;
+    }
 }
 
 /* Landscape phones and portrait tablets */
@@ -137,14 +140,35 @@ margin-bottom: 10px;
     .about {
         margin: 3px 5px;
     }
-}
+    .skils{
+        width: auto;
+        margin: 20px 0px 50px 30px;
+    }
+    
 
 /* Portrait phones and smaller */
 @media screen and (max-width: 480px) {
-  
+  .personal-info {
+      margin-left: 10px;
+  }
+  .skils{
+    margin: 20px 30px 50px 30px;
+}
+  .skils-list {
+    padding-right: 0px;
+}
+
+}
 }
 
 /* Iphone 5 */
 @media screen and (max-width: 320px) {
-    
+    .about-text {
+        text-align: left;
+        width: 100%;
+        margin: 0px 5px 20px 10px;
+    }
+    .about-text-txt {
+        padding-right: 10px;
+    }
 }
