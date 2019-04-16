@@ -8,6 +8,7 @@ import * as acyncActions from "../../_redux/acyncActions.js";
 import './Login.css';
 
 import Modal from '../Modal';
+import BtnHome from '../Common/Btn/BtnHome.js';
 
 class Login extends Component {
     
@@ -55,7 +56,7 @@ class Login extends Component {
           return
         }
       }
-        this.props.authAction('/login',{
+        this.props.authAction('/auth/login',{
             method:'post',
             body: JSON.stringify(data),
             headers: {
@@ -67,10 +68,6 @@ class Login extends Component {
 
 	render () {
 
-    // if (this.props.hasErrored) {
-    //   return <p>Sorry! There was an error loading the items</p>;
-    // }
-
     if ( this.props.isLoading )  {
         return <p>Loading…</p>;
     }
@@ -79,14 +76,12 @@ class Login extends Component {
 
 		return (
     <React.Fragment>
-     {this.props.hasErrored ? <Modal onError={this.onError} errorText={"wwww"} /> : null}
+     {this.props.hasErrored ? <Modal onError={this.onError} errorText={this.props.errText} /> : null}
   
 
 		<div className="login">
       
-            <div className="back-btn">
-              <Link to="/">{"< Back"}</Link>
-            </div>
+            <BtnHome />
 
             <div className="login-form-block">
                 <h3 className="login-form-head">Login form</h3>
@@ -130,7 +125,8 @@ export default connect(
   (store) => {return {
     auth: store.appState.auth,
     hasErrored: store.appState.loginHasErrored,
-    isLoading: store.appState.LoginIsLoading
+    isLoading: store.appState.LoginIsLoading,
+    errText: store.appState.errText,
   }},
   (dispatch) => {return {
     authAction: (url,options,effect)     => { dispatch(acyncActions.Auth(url,options,effect)); },

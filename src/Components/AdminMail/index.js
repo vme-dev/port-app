@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { connect } from 'react-redux';
-import {bindActionCreator} from 'redux';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import * as action from "../../_redux/actions.js";
 import * as acyncActions from "../../_redux/acyncActions.js";
@@ -22,8 +18,7 @@ class AdminMail extends Component {
     componentDidMount() {
 
       if (!this.props.mail.length) {
-
-          this.props.getMail( '/get-mail',
+          this.props.getMail( 'auth/get-mail',
                                 { method:'get' },
                                 action.GET_MAIL_SUCCESS
           );
@@ -41,22 +36,22 @@ class AdminMail extends Component {
         return <p>Loading…</p>;
     }
     
-
 		return (
 		<div className="admin-mail">
-            <h2 className="admin-mail-head">Admin mail</h2>
-            <BtnHome />
+      <h2 className="admin-mail-head">Admin mail</h2>
 
-            <div className="admin-mail-block">
-                <ul className="admin-mail-list">
+      <BtnHome />
 
-                  {this.props.mail.map((item) => (
-                      <Mail item={item} key={item._id} />
-                  ))}
-                </ul>
-            </div>
+      <div className="admin-mail-block">
+          <ul className="admin-mail-list">
+
+            {this.props.mail.map((item) => (
+                <Mail item={item} key={item._id} />
+            ))}
+          </ul>
         </div>
-		)}
+    </div>
+	)}
 }
 
 export default connect(
@@ -67,7 +62,5 @@ export default connect(
   }},
   (dispatch) => {return {
         getMail: (url,options,effect)     => { dispatch(acyncActions.fetchApi(url,options,effect)); }
-
   }}
-  
   )(AdminMail);

@@ -17,7 +17,6 @@ const appState = (state = mainState(), action) => {
         case 'LOGIN_SEND':
         {  
             alert("auth_SUCCESS");
-            console.log("_______",action.res.body);
             return {...state,auth:true};
             break;
         }
@@ -26,7 +25,7 @@ const appState = (state = mainState(), action) => {
             break;
         }
         case 'LOGIN_ITEMS_HAS_ERRORED':{    
-            return {...state, loginHasErrored: action.hasErrored };
+            return {...state, loginHasErrored: action.hasErrored, errText: action.text };
             break;
         }
 

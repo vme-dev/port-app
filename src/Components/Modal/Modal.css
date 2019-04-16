@@ -33,3 +33,34 @@
     background: rgb(49, 142, 204);
     padding: 5px 20px;
 }
+
+@media screen and (max-width: 1170px) {
+	
+}
+
+/* Landscape tablets and medium desktops */
+@media screen and (max-width: 991px) {
+  
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (max-width: 768px)  {
+ 
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 576px) {
+    
+      
+}
+/* Portrait phones and smaller */
+@media screen and (max-width: 480px) {
+ 
+}
+
+/* Iphone 5 */
+@media screen and (max-width: 320px) {
+    .modal {
+        width: 200px;
+    }
+}

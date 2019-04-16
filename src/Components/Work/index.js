@@ -52,13 +52,13 @@ class Work extends Component {
 
 		return (
 		<div className="work">
-            <h2 className="work-head">My work</h2>
+            <h2 className="work-head">My works</h2>
             
             <div className="work-block">
                 <ul className="work-list">
 
                   {this.props.work.map((item) => (
-                          <li  onMouseEnter={(e)=>{ this.activePopup(e)}} 
+                          <li  className="work-list-item" onMouseEnter={(e)=>{ this.activePopup(e)}} 
                                             onMouseLeave={(e)=>{ this.deActivePopup(e)}}
                                             key={item._id}>
                             <WorkItem data={item} />

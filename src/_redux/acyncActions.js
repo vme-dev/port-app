@@ -36,7 +36,7 @@ export function Auth(url,options,effect) {
                 
                 if (!response.ok) {
 
-                    throw Error("error");
+                    throw Error("Wrong login/password or problem with server");
                 } else {
                     
                 dispatch(action.LOGIN_itemsIsLoading(false));
@@ -46,8 +46,7 @@ export function Auth(url,options,effect) {
             })
             .then((obj) => dispatch(effect(obj)))
             .catch((err,res) => { 
-                console.log(err);
                 dispatch(action.LOGIN_itemsIsLoading(false));
-                dispatch(action.LOGIN_itemsHasErrored(true))});
+                dispatch(action.LOGIN_itemsHasErrored(true,err.message))});
     };
 }

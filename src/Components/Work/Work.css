@@ -2,16 +2,22 @@
 
 }
 .work-head {
-
+    margin: 20px 0px;
 }
 .work-block {
 
 }
+.work-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.work-list-item {
+    width: 33.33%;
+
+}
 .work-item{
-    display: block;
-    width: 33.33333333333333%;
+    display: block; 
     height: auto;
-    float: left;
     position: relative;
     overflow: hidden;
 }
@@ -89,11 +95,13 @@
 .btn.toWork {
     float: left;
 }
-.btn.toCode {
+.btn.toCode  {
     float: right;
 }
 
-
+.btn.toWork a, .btn.toCode a {
+    display: block;
+}
 
 @media screen and (max-width: 1170px) {
 	
@@ -101,8 +109,9 @@
 
 /* Landscape tablets and medium desktops */
 @media screen and (max-width: 991px) {
-    .work-item{
+    .work-list-item {
         width: 50%;
+    
     }
   
 }
@@ -119,7 +128,7 @@
 
 /* Portrait phones and smaller */
 @media screen and (max-width: 480px) {
-    .work-item{
+    .work-list-item{
         width: 100%;
     }
 }

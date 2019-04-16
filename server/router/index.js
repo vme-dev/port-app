@@ -2,19 +2,8 @@ var express = require('express');
 var Post = require('../models/Post.js')
 var Work = require('../models/Work.js')
 var Mail = require('../models/Mail.js')
-var fs = require('fs');
-
-
 
 var router = express.Router();
-
-
-// function getExt (str) {
-// 	var pos = str.lastIndexOf(".");
-// 	var newStr = str.substring(pos );
-
-// 	return newStr;
-// };
 
 router.post('/send-mail', (req,res) => {
 
@@ -52,7 +41,6 @@ router.post('/send-work', (req,res) => {
 	});
 });
 
-
 router.get('/get-work', (req,res) => {
 	Work.find({}).then((posts) => {
 		res.status(200).json(posts);
@@ -64,29 +52,6 @@ router.get('/get-mail', (req,res) => {
 	})	
 });
 
-router.post('/add', (req,res) => {
-	console.log(req.files);
-
-	fs.writeFile('./public/' + req.files.img.name, req.files.img.data, (err) => {
-		if (err) {
-		console.error(err)
-		return
-		}
-		console.log(req.body);
-		const postData = {
-			"name":req.body.name,
-			"description":req.body.description,
-			"date": new Date(),
-			"img": req.files.img.name
-		};
-		var post = new Post(postData);
-
-		post.save().then( (post) => {
-		res.status(201).json(post);
-		})
-		console.log('Saved!');
-	});	
-});
 
 router.post('/edit', (req,res) => {
 
@@ -116,29 +81,6 @@ router.post('/delete', (req,res) => {
 		 return res.status(200).send("OK");
 	});
 		
-});
-
-router.post('/upload', (req,res) => {
-
-	console.log(req.files["myFile"]);
-
-	// fs.appendFile(req.files["myFile"].name, req.files["myFile"].data, function (err) {
-	// 	if (err) throw err;
-	// 	console.log('Saved!');
-	//   });
-
-	fs.writeFile('./public/' + req.files["myFile"].name, req.files["myFile"].data, (err) => {
-		if (err) {
-		console.error(err)
-		return
-		}
-		console.log('Saved!');
-		
-	});
-	res.status(200).json({
-		message: 'WELL!'
-	})
-
 });
 
 module.exports = router;

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import { Link } from "react-router-dom";
 import { Icon } from 'react-icons-kit';
 import {menu} from 'react-icons-kit/icomoon/menu';

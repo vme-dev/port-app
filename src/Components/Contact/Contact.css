@@ -1,5 +1,7 @@
 .contact {
     background: #fff;
+    margin: 15px 50px;
+    overflow: hidden;
 }
 .contact-head {
     margin: 20px 0px;
@@ -24,17 +26,19 @@
 }
 .form-input {
     width: 100%;
-    padding: 5px 5px;
+    padding: 5px 7px;
     border: 1px solid #ccc;
     line-height: 20px;
+    font-size: 16px;
     letter-spacing: 1px;
     background-color: transparent;
     -webkit-appearance: none;
     outline-style: none;
     -webkit-appearance: none;
+    border-radius: 7px;
 }
 .form-input:focus {
-    border: 1px solid rgb(49, 142, 204);
+    border: 1px solid rgb(33, 101, 146);
 }
 textarea.form-input {
     height: 120px;
@@ -49,14 +53,62 @@ textarea.form-input {
     border: 0px;
     color: #fff;
     padding: 7px 10px;
+    outline: none;
 }
 .form-btn.submit {
     float: left;
     background: rgb(49, 142, 204);
     -webkit-appearance: none;
 }
+.form-btn.submit:hover {
+    background: rgb(56, 162, 233);
+}
+.form-btn.submit:active {
+    background: rgb(42, 122, 175);
+}
 .form-btn.cancel {
     float: right;
     background: rgb(230, 72, 72);
     -webkit-appearance: none;
+}
+.form-btn.cancel:hover {
+    background: rgb(255, 82, 82);
+}
+.form-btn.cancel:active {
+    background: rgb(194, 60, 60);
+}
+
+
+
+@media screen and (max-width: 1170px) {
+	
+}
+
+/* Landscape tablets and medium desktops */
+@media screen and (max-width: 991px) {
+  
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (max-width: 768px)  {
+ 
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 576px) {
+    .contact {
+        background: #fff;
+        margin: 5px 5px;
+        overflow: hidden;
+    }
+    
+}
+/* Portrait phones and smaller */
+@media screen and (max-width: 480px) {
+  
+}
+
+/* Iphone 5 */
+@media screen and (max-width: 320px) {
+    
 }

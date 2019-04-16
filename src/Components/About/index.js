@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
-
 import { connect } from 'react-redux';
 
-import * as action from "../../_redux/actions.js";
 import './About.css';
 
 class About extends Component {
@@ -21,35 +19,28 @@ class About extends Component {
         let elmBot = document.getElementById('skils-anim').getBoundingClientRect().bottom;
         let winH = document.documentElement.clientHeight;
 
-            if (elmBot < winH + 10) {
-                setTimeout(function() {
-                    const elem = document.getElementById("skils-anim");
-                elem.classList.add("anim"); 
-                },0);
-
-            }
+        if (elmBot < winH + 10) {
+            setTimeout(function() {
+                const elem = document.getElementById("skils-anim");
+            elem.classList.add("anim"); 
+            },0);
+        }
     }
 
     componentDidMount() {
-        console.log(this.state.firsLoad);
-
         if (this.state.firsLoad) {
             let elmBot = document.getElementById('skils-anim').getBoundingClientRect().bottom;
             let winH = document.documentElement.clientHeight;
 
-            if (elmBot < winH + 10) {
+            if (elmBot < winH + 10 && winH > 700) {
                 setTimeout(function() {
                     const elem = document.getElementById("skils-anim");
                 elem.classList.add("anim"); 
                 },100);
-
             }
-
             window.addEventListener('scroll',this.handlerAnim);
-
             this.setState({firsLoad: false});
         }    
-       
     }
 
     componentWillUnmount() {
@@ -97,10 +88,7 @@ class About extends Component {
             <div className="about-text">
                 <h2 className="about-text-head">Something about me</h2>
 
-                <p className="about-text-txt">Я люблю дизайн, верстку и программирование.
-                    Верстка привлекает меня тем, что является посредником между дизайном и программированием, 
-                    в веб-разработке. Я могу углублять свои знания во всех трех областях, для большего понимания всего 
-                    процесса веб-разработки.</p>
+                <p className="about-text-txt">Меня зовут Вадим и я тот, кто умеет делать сайты с нуля. Я владею HTML и CSS, умею писать скрипты на JS. Я люблю изучать все новое и использовать в своих проектах. В качестве фреймворка использую React. В планах ознакомиться с Angular и Vue.JS. Для создания полноценных веб-приложений на бэкенде использую NodeJS и MongoDB. </p>
             </div>
 
             <div className="skils" id="skils-anim">
@@ -150,13 +138,8 @@ class About extends Component {
 
                 </ul>
             </div>
-
-            
-
-        </div>
-       
+        </div> 
       </div>
-      
     );
   }
 }

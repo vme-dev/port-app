@@ -102,7 +102,7 @@ margin-bottom: 10px;
 
 }
 #skils-anim.anim .skil-progres-value {
-    width: 60%;   
+    width: 75%;   
 }
 
 
@@ -144,21 +144,19 @@ margin-bottom: 10px;
         width: auto;
         margin: 20px 0px 50px 30px;
     }
-    
-
+}
 /* Portrait phones and smaller */
 @media screen and (max-width: 480px) {
-  .personal-info {
-      margin-left: 10px;
-  }
-  .skils{
-    margin: 20px 30px 50px 30px;
-}
-  .skils-list {
-    padding-right: 0px;
-}
-
-}
+    .personal-info {
+        margin-left: 10px;
+    }
+    .skils{
+        margin: 20px 20px 50px 20px;
+    }
+    .skils-list {
+        padding-right: 0px;
+    }
+    
 }
 
 /* Iphone 5 */

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { connect } from 'react-redux';
-import {bindActionCreator} from 'redux';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import * as action from "../../_redux/actions.js";
 import Photo from './Photo';
@@ -62,8 +58,5 @@ export default connect(
   (store) => {return {
     index: store,
   }},
-  (dispatch) => {return {
-    changeStops: (e,index)     => { dispatch(action.CHANGE_STOPS(e,index)); },
-  }}
-  
+  (dispatch) => {return {   }}
   )(Menu);

@@ -57,10 +57,11 @@ export function LOGIN_itemsIsLoading(bool) {
         isLoading: bool
     };
 }
-export function LOGIN_itemsHasErrored(bool) {
+export function LOGIN_itemsHasErrored(bool,text) {
     return {
         type: 'LOGIN_ITEMS_HAS_ERRORED',
-        hasErrored: bool
+        hasErrored: bool,
+        text:text
     };
 }
 export function GET_MAIL_SUCCESS(json) {
@@ -82,48 +83,3 @@ export function MAIL_itemsIsLoading(bool) {
         isLoading: bool
     };
 }
-// export function itemsFetchData(url,options) {
-
-//     return (dispatch) => {
-//         dispatch(itemsIsLoading(true));
-
-//         fetch(url,options)
-//             .then((response) => {
-//                 if (!response.ok) {
-//                     throw Error(response.statusText);
-//                 }
-
-//                 dispatch(itemsIsLoading(false));
-
-//                 return response;
-//             })
-//             .then((response) => response.json())
-//             .then((items) => dispatch(itemsFetchDataSuccess(items)))
-//             .catch(() => { 
-//                 dispatch(itemsIsLoading(false));
-//                 dispatch(itemsHasErrored(true))});
-//     };
-// }
-
-// export function fetchApi(url,options) {
-
-//     return (dispatch) => {
-//         dispatch(itemsIsLoading(true));
-
-//         fetch(url,options)
-//             .then((response) => {
-//                 if (!response.ok) {
-//                     throw Error(response.statusText);
-//                 }
-
-//                 dispatch(itemsIsLoading(false));
-
-//                 return response;
-//             })
-//             .then((response) => response.json())
-//             .then((items) => dispatch(itemsFetchDataSuccess([items])))
-//             .catch(() => { 
-//                 dispatch(itemsIsLoading(false));
-//                 dispatch(itemsHasErrored(true))});
-//     };
-// }
