@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { connect } from 'react-redux';
-import {bindActionCreator} from 'redux';
-
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import * as action from "../../_redux/actions.js";
 import * as acyncActions from "../../_redux/acyncActions.js";

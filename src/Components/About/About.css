@@ -1,11 +1,14 @@
 .about {
+    position: relative;
     margin: 15px 50px;
     background: #fff;
     overflow: hidden;
+    animation: move 1s 1 linear normal;
 }
 .about-head {
     margin-top: 20px;
     margin-bottom:40px;
+    text-align: center;
 }
 .personal-info{
     text-align: left;

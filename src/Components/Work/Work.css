@@ -1,5 +1,6 @@
 .work {
-
+    position: relative;
+    animation: move 1s 1 linear normal;
 }
 .work-head {
     margin: 20px 0px;
